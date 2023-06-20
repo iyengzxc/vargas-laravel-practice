@@ -5,5 +5,5 @@
 @endsection
 
 @section('title')
-    Home Page
+    Profile Page
 @endsection
