@@ -25,7 +25,7 @@ use App\Http\Controllers\AuthController;
 Route::get('/',[LandingController::class,'index'])->name('landing');
 
 Route::get('/home',[homeController::class,'index'])->name('home');
-Route::get('/profile',[ProfileController::class,'index'])->middleware('auth')->name('profile');
+Route::get('/profile',[ProfileController::class,'index'])->middleware('auth')->name('profile');//middleware is for authetication pag nakapag log in na
 Route::get('/events',[EventsController::class,'index'])->middleware('auth')->name('events');
 Route::get('/news',[NewsController::class,'index'])->name('news');
 

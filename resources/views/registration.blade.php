@@ -3,7 +3,7 @@
 @section('content')
     <h1>Registration Page</h1>
     <form action="{{route('register')}}" method="post">
-        @csrf
+        @csrf  
         <div>
             <label for="name">Name
                 @error('name')

@@ -12,7 +12,7 @@ class AuthController extends Controller
     public function index(){
         return view('login');
     }
-
+    //controller for login page
     public function login(Request $request){
         $credentials = $request->only(['username','password']);
 
@@ -22,7 +22,7 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['message'=>'Invalid username or password']);
         }
     }
-
+    //logout function
     public function logout(){
         Auth::logout();
 
@@ -32,7 +32,7 @@ class AuthController extends Controller
     public function registration(){
         return view('registration');
     }
-
+    //controller ng register
     public function register(Request $request){
 
         $validate = $request->validate([
@@ -45,7 +45,7 @@ class AuthController extends Controller
         $validate['password'] = Hash::make($validate['password']);
 
         $user = User::create($validate);
-
+        //pag false babalik sa login
         if($user){
             return redirect('/login');
         }
